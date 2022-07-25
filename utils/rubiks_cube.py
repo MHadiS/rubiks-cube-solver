@@ -10,7 +10,7 @@ class RubiksCube:
             return True
         return False
 
-    def __up(self, inverse: bool = False):
+    def up(self, inverse: bool = False):
         blue = state['b'][0]
         green = state['g'][0]
         yellow = state['y'][0]
