@@ -16,12 +16,12 @@ class RubiksCube:
         green = state['g'][0]
         yellow = state['y'][0]
         white = state['w'][0]
-        new_value = None
+        new_values = None
 
         if inverse:
             new_values = (green, yellow, blue, white)
         else:
-            new_value = (blue, white, green, yellow)
+            new_values = (blue, white, green, yellow)
 
         (state['w'][0], state['g'][0], state['y'][0], state['b'][0]) = new_values
 
