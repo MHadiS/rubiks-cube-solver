@@ -1,4 +1,4 @@
-import settings as s
+import utils.settings as s
 
 
 class RubiksCube:
