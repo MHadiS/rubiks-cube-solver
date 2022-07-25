@@ -11,6 +11,7 @@ class RubiksCube:
         return False
 
     def up(self, inverse: bool = False):
+        state = self.state.copy()
         blue = state['b'][0]
         green = state['g'][0]
         yellow = state['y'][0]
@@ -22,7 +23,6 @@ class RubiksCube:
         else:
             new_value = (blue, white, green, yellow)
 
-        state = self.state.copy()
         (state['w'][0], state['g'][0], state['y'][0], state['b'][0]) = new_values
 
         return RubiksCube(state)
