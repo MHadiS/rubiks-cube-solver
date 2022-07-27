@@ -10,12 +10,19 @@ class RubiksCube:
             return True
         return False
 
-    def up(self, inverse: bool = False):
+    def up_down(self, command: str, inverse: bool = False):
         state = self.state.copy()
-        blue = state['b'][0]
-        green = state['g'][0]
-        yellow = state['y'][0]
-        white = state['w'][0]
+
+        if command.lower == "up":
+            row = 0
+        
+        elif command.lower == "down":
+            row = 2
+
+        blue = state['b'][row]
+        green = state['g'][row]
+        yellow = state['y'][row]
+        white = state['w'][row]
         new_values = None
 
         if inverse:
@@ -23,6 +30,6 @@ class RubiksCube:
         else:
             new_values = (blue, white, green, yellow)
 
-        (state['w'][0], state['g'][0], state['y'][0], state['b'][0]) = new_values
+        (state['w'][row], state['g'][row], state['y'][row], state['b'][row]) = new_values
 
         return RubiksCube(state)
