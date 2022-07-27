@@ -12,13 +12,7 @@ class RubiksCube:
 
     def up_down(self, command: str, inverse: bool = False):
         state = self.state.copy()
-        row = None
-
-        if command.lower == "up":
-            row = 0
-        
-        elif command.lower == "down":
-            row = 2
+        row = 0 if command.lower() == "up" else 2
 
         blue = state['b'][row]
         green = state['g'][row]
