@@ -12,6 +12,7 @@ class RubiksCube:
 
     def up_down(self, command: str, inverse: bool = False):
         state = self.state.copy()
+        row = None
 
         if command.lower == "up":
             row = 0
@@ -33,3 +34,6 @@ class RubiksCube:
         (state['w'][row], state['g'][row], state['y'][row], state['b'][row]) = new_values
 
         return RubiksCube(state)
+    
+    def left_right(self, command: str, inverse: bool = False):
+        pass
