@@ -16,7 +16,7 @@ def test_solved(cube):
 
 
 def test_up(cube):
-    expected_state1 = {
+    expected_state = {
         'w': [['b'] * 3,
               ['w'] * 3,
               ['w'] * 3],
@@ -38,9 +38,12 @@ def test_up(cube):
               ['b'] * 3],
     }
 
-    assert cube.up().state == expected_state1
+    assert cube.up().state == expected_state
+    cube.up(True)
 
-    expected_state2 = {
+
+def test_up_inverse(cube):
+    expected_state = {
         'w': [['g'] * 3,
               ['w'] * 3,
               ['w'] * 3],
@@ -62,4 +65,5 @@ def test_up(cube):
               ['b'] * 3],
     }
     
-    assert cube.up(True).state == expected_state2
+    assert cube.up(True).state == expected_state
+    cube.up()
