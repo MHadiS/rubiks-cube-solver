@@ -39,7 +39,7 @@ def test_up(cube):
     }
 
     assert cube.up_down("up").state == expected_state
-    cube.up(True)
+    cube.up_down("up", True)
 
 
 def test_up_inverse(cube):
@@ -66,7 +66,7 @@ def test_up_inverse(cube):
     }
     
     assert cube.up_down("up", True).state == expected_state
-    cube.up()
+    cube.up_down("up")
 
 
 def test_down(cube):
