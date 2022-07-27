@@ -38,7 +38,7 @@ def test_up(cube):
               ['b'] * 3],
     }
 
-    assert cube.up().state == expected_state
+    assert cube.up_down("up").state == expected_state
     cube.up(True)
 
 
@@ -65,5 +65,32 @@ def test_up_inverse(cube):
               ['b'] * 3],
     }
     
-    assert cube.up(True).state == expected_state
+    assert cube.up_down("up", True).state == expected_state
     cube.up()
+
+
+def test_down(cube):
+    expected_state = {
+        'w': [['w'] * 3,
+              ['w'] * 3,
+              ['b'] * 3],
+
+        'o': [['o'] * 3] * 3,
+
+        'g': [['g'] * 3,
+              ['g'] * 3,
+              ['w'] * 3],
+
+        'y': [['y'] * 3,
+              ['y'] * 3,
+              ['g'] * 3],
+
+        'r': [['r'] * 3] * 3,
+
+        'b': [['b'] * 3,
+              ['b'] * 3,
+              ['y'] * 3],
+    }
+
+    assert cube.up_down("down").state == expected_state
+    cube.up_down("down", True)
